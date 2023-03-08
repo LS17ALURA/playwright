@@ -1,6 +1,6 @@
 const {chromium} = require('playwright');
 
-/*(async() => {
+(async() => {
     const browser = await chromium.launch({headless:false, slowMo: 50})
     const context = await browser.newContext()
     const page = await context.newPage()
@@ -13,24 +13,5 @@ const {chromium} = require('playwright');
     //await page.dblclick('form >> "Sign in"')
     await page.focus('form >> "Sign in"')
 
-}) ()*/
-
-
-(async() => {
-    const browser = await chromium.launch({headless:false, slowMo:50})
-    const context = await browser.newContext()
-    const page = await context.newPage()
-    await page.goto('http://todomvc.com/examples/react/#/')
-
-    await page.fill('.new-todo', 'Task_1')
-    await page.press('.new-todo', 'Enter')
-
-    await page.fill('.new-todo', 'Task_2')
-    await page.press('.new-todo', 'Enter')
-
-    await page.check('.toggle')
-    
-    const elements = await page.$$('.toggle')
-    elements.forEach(element => element.check())
-    
 }) ()
+

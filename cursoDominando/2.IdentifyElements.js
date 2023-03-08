@@ -1,7 +1,7 @@
 const {chromium} = require('playwright');
 
 (async() => {
-    const browser = await chromium.launch()
+    const browser = await chromium.launch({headless:false})
     const context = await browser.newContext()
     const page = await context.newPage()
     await page.goto('https://react-redux.realworld.io/#/login')
@@ -36,6 +36,7 @@ const {chromium} = require('playwright');
     const input = await page.$$('.form-control') //tudo que for localizado será colocado na arry input
     await input[0].click()
     await input[1].click()
+    await page.screenshot({path:`./screenshots/two.png`})
 
     await browser.close()
 }) ()

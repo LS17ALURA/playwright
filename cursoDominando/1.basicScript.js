@@ -6,6 +6,6 @@ const {chromium} = require('playwright');
     // const page = await context.newPage()
     const page = await browser.newPage()
     await page.goto('http://todomvc.com/examples/react/#/')
-    await page.screenshot({path:`todo.png`})
+    await page.screenshot({path:`./screenshots/one.png`})
     await browser.close()
 }) ()
