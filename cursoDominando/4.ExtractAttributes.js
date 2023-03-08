@@ -1,5 +1,6 @@
 const { chromium } = require('playwright');
 
+
 (async () => {
     const browser = await chromium.launch()
     const context = await browser.newContext()
@@ -36,4 +37,5 @@ const { chromium } = require('playwright');
     console.log('href: ' + href)
 
     await browser.close()
+
 })()

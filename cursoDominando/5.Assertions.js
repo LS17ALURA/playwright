@@ -1,5 +1,5 @@
-const { chromium } = require('playwright'); //corrigir: expect não é reconhecido como função
-const expect = require('expect');
+const { chromium } = require('playwright'); 
+const {expect} = require('expect');
 
 (async () => {
     const browser = await chromium.launch()
